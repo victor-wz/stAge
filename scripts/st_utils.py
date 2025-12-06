@@ -29,6 +29,7 @@ import squidpy as sq
 from scipy.sparse import issparse, csr_matrix
 import sklearn 
 from sklearn.pipeline import Pipeline
+from statannotations.Annotator import Annotator
 
 
 # PIPELINE TO GENERATE tAGE PREDICTIONS FROM ST-OMICS DATA 
@@ -871,8 +872,8 @@ def full_nonoverlap_mp_pipeline(anndata_dict, # takes a dictionary with file nam
     print(f'After filtering there are {ad_filtered.n_obs} samples left and {ad_filtered.n_vars} genes left.')
 
     # Load the clocks 
-    clock_model = joblib.load(f'/home/vvicente/spatial_aging/{clock_folder}/EN_Chronoage_Mouse_All_WT_scaleddiff.pkl')
-    clock_model_yugene = joblib.load(f'/home/vvicente/spatial_aging/{clock_folder}/EN_Chronoage_Mouse_All_WT_yugenediff.pkl')
+    clock_model = joblib.load(f'{clock_folder}/EN_Chronoage_Mouse_All_WT_scaleddiff.pkl')
+    clock_model_yugene = joblib.load(f'{clock_folder}/EN_Chronoage_Mouse_All_WT_yugenediff.pkl')
 
     # Create a dataframe out of the ad_filtered
     df = pd.DataFrame(ad_filtered.X.T, index=ad_filtered.var_names, columns=ad_filtered.obs.index)
