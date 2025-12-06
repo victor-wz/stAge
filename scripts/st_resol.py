@@ -62,9 +62,9 @@ def optimal_resolution_search(
 
     # Define the different clocks you want to test
     clock_dirs = {
-        f'orig': 'tAge_clocks/EN differential models 4.6',
-        f'tms': 'tAge_clocks/tms_clocks',
-        f'tmsh': 'tAge_clocks/tmsh_clocks'
+        f'orig': '/home/vvicente/spatial_aging/tAge_clocks/EN differential models 4.6',
+        f'tms': '/home/vvicente/spatial_aging/tAge_clocks/tms_clocks',
+        f'tmsh': '/home/vvicente/spatial_aging/tAge_clocks/tmsh_clocks'
     }
 
     # Iterate over each clock variant
