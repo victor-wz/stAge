@@ -22,6 +22,6 @@ The following files are all needed in the same directory as the notebook (all av
 - Mus_musculus.gene_info
 - st_utils.py & st_resol.py
 
-More specific instructions are available in the notebook. 
+More instructions are available in the notebook. Happy predicting!
 
 <img width="200" height="240" alt="image" src="https://github.com/user-attachments/assets/2abd9e20-fd08-4321-84c1-973a3e522c92" />
