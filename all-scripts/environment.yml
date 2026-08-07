@@ -1,0 +1,41 @@
+name: stage-release
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - matplotlib
+  - seaborn
+  - tqdm
+  - joblib
+  - jupyter
+  - nbconvert
+  # single-cell / spatial
+  - scanpy
+  - anndata
+  - squidpy
+  # spatial statistics (Getis-Ord Gi*, k-NN spatial weights)
+  - esda
+  - libpysal
+  # significance annotation used by stage.plotting's statannotations-based mode
+  - statannotations
+  - pip
+  - pip:
+      - gseapy
+      # data-download helper (data/download.py) — pulls public GEO/GSE series
+      - GEOparse
+
+# --- R side (Fig 6b DESeq2, Fig S11 SingleR, Fig 5d meta-regression, RDS conversion) ---
+# Not installable via this conda file — R/DESeq2/Bioconductor packages are managed
+# separately. See R/install_dependencies.R and the note in README.md: this repo's
+# R package versions were not captured from a live `renv::snapshot()` at release-prep
+# time (Phase 2 built these files by extracting/cleaning existing script logic, not by
+# executing it end-to-end in R) — run `Rscript R/install_dependencies.R` and then
+# `renv::init(); renv::snapshot()` yourself once you've confirmed the scripts run, to
+# produce a real, version-pinned renv.lock for the final release rather than one
+# fabricated here.
